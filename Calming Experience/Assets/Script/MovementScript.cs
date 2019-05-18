@@ -3,11 +3,13 @@ using System.Collections;
 
 public class MovementScript : MonoBehaviour
 {
+    LevelCamera flying;
     float speed;
     float sprintSpeed;
 
     void Start()
     {
+        flying = gameObject.GetComponent<LevelCamera>();
         speed = 5f;
         sprintSpeed = 10f;
     }
@@ -29,8 +31,14 @@ public class MovementScript : MonoBehaviour
         {
             transform.position = transform.position + Camera.main.transform.forward * speed * Time.deltaTime;
         }
-
-
+        if (flying.enabled == false)
+        {
+            sprintSpeed = 50f;
+        }
+        if (flying.enabled == true)
+        {
+            sprintSpeed = 10f;
+        }
 
         if (Input.GetKey(KeyCode.LeftShift))
 
@@ -46,5 +54,8 @@ public class MovementScript : MonoBehaviour
         {
             speed = 5f;
         }
+
+
     }
+
 }

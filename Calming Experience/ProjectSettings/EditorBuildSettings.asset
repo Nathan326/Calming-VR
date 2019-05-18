@@ -4,5 +4,20 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 0948bbd1a668bfd4393f032e8168ec75
+  - enabled: 1
+    path: Assets/Scenes/CalmForest.unity
+    guid: 37d5300575ba759428b20c1816970c4a
+  - enabled: 1
+    path: Assets/Scenes/Settings.unity
+    guid: c33705c0e1663a04eb404e4b59dce2a3
+  - enabled: 1
+    path: Assets/Scenes/Controls.unity
+    guid: e34cbb6936b6cbb41926980ecd7e7ef6
+  - enabled: 1
+    path: Assets/Scenes/QuitConfirmation.unity
+    guid: 50a9fab08cad5814e959635e08ef0901
   m_configObjects: {}
