@@ -9,11 +9,13 @@ public class MainMenu : MonoBehaviour
     public void Menu()
     {
         SceneManager.LoadScene(0); //this function sends the user to scene 0 (main menu)
+        Cursor.visible = true;
     }
 
     public void PlayGame()
     {
         SceneManager.LoadScene(1); //this function sends the user to scene 1 (forest experience)
+        Cursor.visible = false;
     }
 
     public void Settings()

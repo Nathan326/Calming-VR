@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class MovementScript : MonoBehaviour
 {
@@ -74,7 +75,11 @@ public class MovementScript : MonoBehaviour
             speed = 5f;
         }
 
-
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            SceneManager.LoadScene(0);
+            Cursor.visible = true;
+        }
     }
 
 }
