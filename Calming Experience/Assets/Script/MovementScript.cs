@@ -17,36 +17,42 @@ public class MovementScript : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKey(KeyCode.RightArrow) || (Input.GetKey(KeyCode.D)))
+        if (Input.GetKey(KeyCode.RightArrow) || (Input.GetKey(KeyCode.D))) //if the right arrow or D is pressed
         {
-            rb.isKinematic = false;
+            rb.isKinematic = false; //the camera becomes non kinematic (means it collides)
             transform.position = transform.position + Camera.main.transform.right * speed * Time.deltaTime;
         }
+
         if (Input.GetKey(KeyCode.LeftArrow) || (Input.GetKey(KeyCode.A)))
         {
-            rb.isKinematic = false;
+            rb.isKinematic = false; //the camera becomes non kinematic (means it collides)
             transform.position = transform.position + Camera.main.transform.right * -speed * Time.deltaTime;
         }
+
         if (Input.GetKey(KeyCode.DownArrow) || (Input.GetKey(KeyCode.S)))
         {
-            rb.isKinematic = false;
+            rb.isKinematic = false; //the camera becomes non kinematic (means it collides)
             transform.position = transform.position + Camera.main.transform.forward * -speed * Time.deltaTime;
         }
+
         if (Input.GetKey(KeyCode.UpArrow) || (Input.GetKey(KeyCode.W)))
         {
-            rb.isKinematic = false;
+            rb.isKinematic = false; //the camera becomes non kinematic (means it collides)
             transform.position = transform.position + Camera.main.transform.forward * speed * Time.deltaTime;
         }
 
-        if (!Input.GetKey(KeyCode.RightArrow) && !Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.LeftArrow) && !Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.DownArrow) && !Input.GetKey(KeyCode.S) && !Input.GetKey(KeyCode.UpArrow) && !Input.GetKey(KeyCode.W)) 
+        if (!Input.GetKey(KeyCode.RightArrow) && !Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.LeftArrow) &&
+            !Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.DownArrow) && !Input.GetKey(KeyCode.S) && !Input.GetKey(KeyCode.UpArrow) && !Input.GetKey(KeyCode.W)) 
         {
-            rb.isKinematic = true;
+            rb.isKinematic = true; //the camera becomes kinematic (to stop it sliding)
             transform.position = transform.position;
         }
+
         if (flying.enabled == false)
         {
             sprintSpeed = 50f;
         }
+
         if (flying.enabled == true)
         {
             sprintSpeed = 10f;
@@ -57,11 +63,12 @@ public class MovementScript : MonoBehaviour
         {
             speed = sprintSpeed;
         }
-        else
 
+        else
         {
             speed = speed;
         }
+
         if (Input.GetKeyUp(KeyCode.LeftShift))
         {
             speed = 5f;
