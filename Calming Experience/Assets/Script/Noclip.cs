@@ -16,7 +16,7 @@ public class Noclip : MonoBehaviour
     {
         float x = transform.position.x;
         float z = transform.position.z;
-        float y = 1;
+        float y = 2;
         if (Input.GetKeyUp(KeyCode.N))
         {
             noclip.enabled = false; //enable the script when space is pressed
